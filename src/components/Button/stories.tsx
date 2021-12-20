@@ -7,6 +7,6 @@ import CenterView from '../../../storybook/stories/CenterView'
 storiesOf('Button', module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
   .add('default', () => <Button title="login" onPress={action('clicked')} />)
-  .add('main', () => (
-    <Button main title="sign up" onPress={action('clicked')} />
+  .add('primary', () => (
+    <Button primary title="sign up" onPress={action('clicked')} />
   ))
