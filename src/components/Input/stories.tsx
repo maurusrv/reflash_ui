@@ -2,10 +2,23 @@ import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 import Input from '.'
 import CenterView from '../../../storybook/stories/CenterView'
+import tailwind from 'tailwind-rn'
 
 storiesOf('Field', module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-  .add('text', () => <Input type="text" label="username" onChange={() => {}} />)
+  .add('text', () => (
+    <Input
+      containerStyle={tailwind('w-9/12')}
+      type="text"
+      label="username"
+      onChangeText={() => {}}
+    />
+  ))
   .add('password', () => (
-    <Input type="password" label="password" onChange={() => {}} />
+    <Input
+      containerStyle={tailwind('w-9/12')}
+      type="password"
+      label="password"
+      onChangeText={() => {}}
+    />
   ))

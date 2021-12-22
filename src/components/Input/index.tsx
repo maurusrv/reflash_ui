@@ -1,32 +1,37 @@
 import React from 'react'
-import { Text, TextInput, View } from 'react-native'
+import { StyleProp, Text, TextInput, View, ViewStyle } from 'react-native'
 import tailwind from 'tailwind-rn'
 
-interface FieldProps {
+interface InputProps {
+  containerStyle: StyleProp<ViewStyle>
   type: string
   label: string
-  onChange: () => void
+  onChangeText: () => void
 }
 
-const Input: React.FC<FieldProps> = ({ type, label, onChange }) => {
+const Input: React.FC<InputProps> = ({
+  containerStyle,
+  type,
+  label,
+  onChangeText,
+}) => {
   let field = null
+  const fieldStyle = tailwind(
+    'bg-gray-100 rounded-lg border-white text-base h-10 px-2',
+  )
   if (type === 'text') {
     field = (
       <TextInput
-        style={tailwind(
-          'focus:border-green-400 bg-gray-100 rounded-lg border-white text-base h-10 px-2',
-        )}
-        onChange={onChange}
+        style={fieldStyle}
+        onChangeText={onChangeText}
         autoCapitalize="none"
       />
     )
   } else if (type === 'password') {
     field = (
       <TextInput
-        style={tailwind(
-          'focus:border-green-400 bg-gray-100 rounded-lg border-white text-base h-10 px-2',
-        )}
-        onChange={onChange}
+        style={fieldStyle}
+        onChangeText={onChangeText}
         secureTextEntry
       />
     )
@@ -34,7 +39,7 @@ const Input: React.FC<FieldProps> = ({ type, label, onChange }) => {
 
   if (field) {
     return (
-      <View>
+      <View style={containerStyle}>
         <Text style={tailwind('p-1')}>{label}</Text>
         {field}
       </View>
