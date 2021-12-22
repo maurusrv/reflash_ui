@@ -7,7 +7,7 @@ interface InputProps {
   type: string
   label: string
   value: string
-  onChangeText: () => void
+  onChangeText: (text: string) => void
 }
 
 const Input: React.FC<InputProps> = ({
