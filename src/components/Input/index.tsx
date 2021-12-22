@@ -27,6 +27,7 @@ const Input: React.FC<InputProps> = ({
         style={fieldStyle}
         onChangeText={onChangeText}
         autoCapitalize="none"
+        autoCorrect={false}
         value={value}
       />
     )
