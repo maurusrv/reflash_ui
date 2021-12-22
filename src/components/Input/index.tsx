@@ -6,6 +6,7 @@ interface InputProps {
   containerStyle: StyleProp<ViewStyle>
   type: string
   label: string
+  value: string
   onChangeText: () => void
 }
 
@@ -14,6 +15,7 @@ const Input: React.FC<InputProps> = ({
   type,
   label,
   onChangeText,
+  value,
 }) => {
   let field = null
   const fieldStyle = tailwind(
@@ -25,6 +27,7 @@ const Input: React.FC<InputProps> = ({
         style={fieldStyle}
         onChangeText={onChangeText}
         autoCapitalize="none"
+        value={value}
       />
     )
   } else if (type === 'password') {
@@ -33,6 +36,7 @@ const Input: React.FC<InputProps> = ({
         style={fieldStyle}
         onChangeText={onChangeText}
         secureTextEntry
+        value={value}
       />
     )
   }

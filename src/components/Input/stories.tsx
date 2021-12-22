@@ -12,6 +12,7 @@ storiesOf('Field', module)
       type="text"
       label="username"
       onChangeText={() => {}}
+      value=""
     />
   ))
   .add('password', () => (
@@ -20,5 +21,6 @@ storiesOf('Field', module)
       type="password"
       label="password"
       onChangeText={() => {}}
+      value=""
     />
   ))
