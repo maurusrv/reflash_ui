@@ -1,6 +1,6 @@
 {
   "name": "@maurusrv/reflash_ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://maurusrv.github.io/reflash_ui/storybook-static",
   "scripts": {
     "android": "react-native run-android",
