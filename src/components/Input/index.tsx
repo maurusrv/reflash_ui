@@ -3,7 +3,7 @@ import { StyleProp, Text, TextInput, View, ViewStyle } from 'react-native'
 import tailwind from 'tailwind-rn'
 
 interface InputProps {
-  containerStyle: StyleProp<ViewStyle>
+  containerStyle?: StyleProp<ViewStyle>
   type: string
   label: string
   value: string

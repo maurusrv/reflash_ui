@@ -3,20 +3,21 @@ import { Text, TouchableOpacity, View } from 'react-native'
 import tailwind from 'tailwind-rn'
 
 interface ButtonProps {
+  color: string
   primary?: boolean
   title: string
   onPress: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ primary, title, onPress }) => {
+const Button: React.FC<ButtonProps> = ({ color, primary, title, onPress }) => {
   const buttonStyle = tailwind(
     `rounded-lg w-32 ${
-      primary ? 'bg-green-400' : 'border border-green-400 bg-white'
+      primary ? `bg-${color}-500` : `border border-${color}-500 bg-white`
     }`,
   )
   const labelStyle = tailwind(
     `mx-4 ${
-      primary ? 'm-3 text-white' : 'm-2.5 text-green-400'
+      primary ? 'm-3 text-white' : `m-2.5 text-${color}-500`
     } text-lg font-bold text-center`,
   )
 
